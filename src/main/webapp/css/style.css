@@ -1,0 +1,194 @@
+@charset "UTF-8";
+
+
+#logo {
+  margin-top: 1px;
+}
+div.head {
+  display: inline-block;
+}
+#search {
+  position: absolute;
+  width: 200px;
+  display: inline-block;
+  right: 150px;
+}
+#input_search {
+  width: 200px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+#img_search {
+  position: absolute;
+  width: 17px;
+  top: 10px;
+  right: -20px;
+  margin: 0;
+}
+#profile {
+  position: absolute;
+  top: 11px;
+  right: 85px;
+  width: 30px;
+}
+#login {
+  position: absolute;
+  padding: 4px 10px;
+  display: inline-block;
+  top: 11px;
+  right: 10px;
+}
+a {
+  text-decoration-line: none;
+}
+.menu {
+  padding: 0px 4%;
+  color: gray;
+}
+.menu:active {
+  text-decoration-line: underline;
+}
+#map {
+  display: inline-block;
+  width: 100%;
+  height: 300px;
+  margin: auto;
+}
+.container {
+  padding: 0px 0px 0px 50px;
+  display: inline-block;
+  width: 70%;
+}
+.aside {
+  width: 200px;
+  display: inline;
+  position: absolute;
+}
+.home {
+  position: relative;
+  left: 10%;
+  top: -10px;
+  text-align: center;
+}
+.home_img {
+  width: 200px;
+  height: 120px;
+  padding: 10px 0px 0px 0px;
+  text-align: center;
+}
+.home_link {
+  padding: 0px 0px 0px 10px;
+  text-align: center;
+  font-size: 13.5px;
+}
+.container2 {
+  margin-top: 10px;
+  display: flex;
+  height: 60vh; /* 100% 뷰포트 높이 */
+  justify-content: space-between;
+}
+
+.column {
+  flex: 1; /* 동일한 너비로 나누기 */
+  box-sizing: border-box; /* 테두리 두께를 전체 너비에 포함시키기 */
+  padding: 0px 30px;
+}
+.column:not(:last-child) {
+  border-right: 1px solid #ddd; /* 마지막 컬럼을 제외한 모든 컬럼에 오른쪽 테두리 추가 */
+}
+li {
+  line-height: 1.5em;
+}
+#announcement > li {
+  font-size: 10px;
+  line-height: 3em;
+  color: gray;
+}
+#news > li {
+  list-style-type: none;
+  font-size: 0.8em;
+  line-height: 2em;
+}
+.footer {
+  text-align: center;
+}
+#blockchain {
+  height: 20em;
+}
+/* 로그인 팝업창 */
+/* 팝업 스타일 */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  text-align: center;
+}
+
+/* 팝업 내부 스타일 */
+.popup h2 {
+  color: #333;
+}
+
+.popup form {
+  margin-top: 20px;
+}
+
+.popup label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.popup input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.popup input[type='submit'] {
+  background-color: #6a24fe;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* 배경 오버레이 스타일 */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+}
+/* 버튼 컨테이너 스타일 */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+/* 버튼 스타일 */
+button:not(#login) {
+  flex: 1; /* 동일한 너비 지정 */
+  padding: 10px;
+  margin-right: 8px; /* 버튼 사이 간격 조절 */
+  background-color: #6a24fe;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
