@@ -84,12 +84,12 @@
 				<span class="input_area"><input type="email" name="email"></span>
 				
 				<h4>우편번호</h4>
-				<span class="input_area"><input type="text" name="address" class="postcodify_postcode5"></span>
+				<span class="input_area"><input type="text" name="addr1" class="postcodify_postcode5"></span>
 				<button type="button" id="postcodify_search_button" class="bt">검색</button>
 				<h4>도로명주소</h4>
-				<span class="input_area"><input type="text" name="address" class="postcodify_address"></span>
+				<span class="input_area"><input type="text" name="addr2" class="postcodify_address"></span>
 				<h4>상세주소</h4>
-				<span class="input_area"><input type="text" name="address" class="postcodify_details"></span>
+				<span class="input_area"><input type="text" name="addr3" class="postcodify_details"></span>
 
 				<div class="btnArea">
 					<button id="joinBtn" class="bt" style="width : 300px">가입하기</button>
@@ -97,7 +97,7 @@
 			</form>
 		</div>
 	</div>
-	
+</div>
 	<!-- 주소 API 스크립트 -->
 	<!-- jQuery와 Postcodify를 로딩한다 -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>

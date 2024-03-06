@@ -18,20 +18,6 @@ if(cks!=null){
 	}
 }
 %>
-<script>
-  function closeLoginPopup() {
-    // ID 입력 필드 비우기
-    document.getElementById("id").value = "";
-    // Password 입력 필드 비우기
-    document.getElementById("pw").value = "";
-    // 아이디 저장 체크박스 체크 해제
-    document.getElementById("saveId").checked = false;
-    // 팝업 닫기
-    document.getElementById('loginPopup').style.display = 'none';
-	document.getElementById('overlay').style.display = 'none';
-	
-  }
-</script>
 <!-- 로그인 팝업 -->
 <div id="loginPopup" class="popup">
   <h2>Login</h2>
@@ -63,7 +49,7 @@ if(cks!=null){
 			checked
 		<% }//if----------%>
 		style="width:10%">아이디 저장
-	</label>  <a href="login/join.jsp" style="margin-left: 30px;display: inline-block">회원가입</a>
+	</label>  <a href="<%=ctx %>/login/join.jsp" style="margin-left: 30px;display: inline-block">회원가입</a>
 
     <div class="button-container">
    

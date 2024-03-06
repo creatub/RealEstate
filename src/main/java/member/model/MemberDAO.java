@@ -34,13 +34,17 @@ public class MemberDAO {
 		// try catch로 하면 화면에 Exception 보여주기 어려움 -> console에만 출력 가능
 		try {
 			con=ds.getConnection();
-			String sql = "INSERT INTO SERVICE_USER(ID,NAME,PW,TEL,INDATE)";
-				   sql+= " VALUES(?,?,?,?,SYSDATE)";
+			String sql = "INSERT INTO SERVICE_USER(ID,NAME,PW,TEL,INDATE,EMAIL,ADDR1,ADDR2,ADDR3)";
+				   sql+= " VALUES(?,?,?,?,SYSDATE,?,?,?,?)";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, user.getId());
 			ps.setString(2, user.getName());
 			ps.setString(3, user.getPw());
 			ps.setString(4, user.getTel());
+			ps.setString(5, user.getEmail());
+			ps.setString(6, user.getAddr1());
+			ps.setString(7, user.getAddr2());
+			ps.setString(8, user.getAddr3());
 			
 			int n = ps.executeUpdate();
 			return n;
@@ -54,12 +58,17 @@ public class MemberDAO {
 		try {
 //			con=DBUtil.getCon();
 			con=ds.getConnection();
-			String sql = "UPDATE SERVICE_USER SET name=?, tel=?, pw=? WHERE id = ?";
+			String sql = "UPDATE SERVICE_USER SET name=?, tel=?, pw=?, email=?,"
+					+ " addr1=?, addr2=?, addr3=? WHERE id = ?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, user.getName());
 			ps.setString(2, user.getTel());
 			ps.setString(3, user.getPw());
-			ps.setString(4, user.getId());
+			ps.setString(4, user.getEmail());
+			ps.setString(5, user.getAddr1());
+			ps.setString(6, user.getAddr2());
+			ps.setString(7, user.getAddr3());
+			ps.setString(8, user.getId());
 			
 			int n = ps.executeUpdate();
 			return n;
@@ -88,8 +97,12 @@ public class MemberDAO {
 			String pw = rs.getString("pw");
 			String name = rs.getString("name");
 			String tel = rs.getString("tel");
+			String email = rs.getString("email");
+			String addr1 = rs.getString("addr1");
+			String addr2 = rs.getString("addr2");
+			String addr3 = rs.getString("addr3");
 			java.sql.Date indate = rs.getDate("indate");
-			MemberVO record = new MemberVO(id,pw,name,tel,indate);
+			MemberVO record = new MemberVO(id,pw,name,tel,indate,email,addr1,addr2,addr3);
 			arr.add(record);
 		}//---while
 		return arr;

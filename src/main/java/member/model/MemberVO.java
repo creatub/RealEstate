@@ -7,18 +7,29 @@ public class MemberVO {
 	private String name;
 	private String tel;
 	private java.sql.Date indate;
+	private String email;
+	private String addr1;
+	private String addr2;
+	private String addr3;
 	//기본 생성자
 	public MemberVO() {
 		
 	}
 	//인자 생성자
-	public MemberVO(String id, String pw, String name, String tel, Date indate) {
+	public MemberVO(String id, String pw, String name, String tel, Date indate, String email, String addr1,
+			String addr2, String addr3) {
+		super();
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
 		this.tel = tel;
 		this.indate = indate;
+		this.email = email;
+		this.addr1 = addr1;
+		this.addr2 = addr2;
+		this.addr3 = addr3;
 	}
+	
 	//setter, getter
 	public String getId() {
 		return id;
@@ -50,4 +61,29 @@ public class MemberVO {
 	public void setIndate(java.sql.Date indate) {
 		this.indate = indate;
 	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getAddr1() {
+		return addr1;
+	}
+	public void setAddr1(String addr1) {
+		this.addr1 = addr1;
+	}
+	public String getAddr2() {
+		return addr2;
+	}
+	public void setAddr2(String addr2) {
+		this.addr2 = addr2;
+	}
+	public String getAddr3() {
+		return addr3;
+	}
+	public void setAddr3(String addr3) {
+		this.addr3 = addr3;
+	}	
+	
 }
