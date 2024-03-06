@@ -8,7 +8,10 @@
 	System.out.println("saveId: "+saveId);
 
 	if(id==null||pw==null||id.trim().isBlank()||pw.trim().isBlank()){
-		response.sendRedirect("login.jsp");
+		out.println("<script>");
+		out.println("alert('아이디, 비밀번호를 확인하세요')");
+		out.println("location.href='javascript:history.back()'");
+		out.println("</script>");
 		return;
 	}
 	

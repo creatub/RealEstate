@@ -25,9 +25,9 @@
 	MemberDAO userDao = new MemberDAO();
 	try {
 		//5. 그 결과 메시지 처리 ==> alert()로 보여주기
-		int n = userDao.insertMember(user);
-		String msg=(n>0)?"회원가입이 완료되었습니다.":"회원가입에 실패했습니다.";
-		String loc=(n>0)?"../index.jsp":"join.jsp";
+		int n = userDao.updateMember(user);
+		String msg=(n>0)?"회원정보 수정이 완료되었습니다.":"회원정보 수정에 실패했습니다.";
+		String loc="mypage.jsp";
 		//6. 페이지 이동 ===> index.html로
 		out.println("<script>");
 		out.println("alert('"+msg+"')");
@@ -35,7 +35,7 @@
 		out.println("</script>");
 	}catch(SQLException e) {
 		out.println("<script>");
-		out.println("alert('이미 사용중인 아이디입니다')");
+		out.println("alert('회원 정보를 확인해주세요')");
 		out.println("history.back()");
 		out.println("</script>");
 		e.printStackTrace();

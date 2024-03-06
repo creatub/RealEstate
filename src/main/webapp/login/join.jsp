@@ -63,7 +63,7 @@
 				<h1>회원 가입</h1>
 				
 				<h4>* 아이디</h4>
-				<span class="input_area"><input type="text" maxlength="13" name="id" required></span>
+				<span class="input_area"><input type="text" maxlength="13" name="id" id="idField" required></span>
 				<button id="idCheck" type="button" class="bt">중복확인</button>
 				
 				<h4>* 비밀번호</h4>
@@ -98,6 +98,7 @@
 		</div>
 	</div>
 </div>
+<jsp:include page="/inc/foot.jsp" />
 	<!-- 주소 API 스크립트 -->
 	<!-- jQuery와 Postcodify를 로딩한다 -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -112,12 +113,11 @@
 		}
 	</script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function() {
     $("#idCheck").click(function() {
-        var idValue = $("input[name='id']").val(); // 아이디 입력란의 값 가져오기
-
+        var idValue = $("input[id='idField']").val(); // 아이디 입력란의 값 가져오기
+		alert(idValue);
         $.ajax({
             url: "<%= request.getContextPath() %>/login/idDuplicateCheck.jsp", // 중복 체크 JSP 파일의 경로
             method: "POST", // POST 방식으로 요청
@@ -145,4 +145,3 @@ $(document).ready(function() {
 </script>
 
 
-<jsp:include page="/inc/foot.jsp" />

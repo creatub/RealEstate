@@ -58,8 +58,7 @@ public class MemberDAO {
 		try {
 //			con=DBUtil.getCon();
 			con=ds.getConnection();
-			String sql = "UPDATE SERVICE_USER SET name=?, tel=?, pw=?, email=?,"
-					+ " addr1=?, addr2=?, addr3=? WHERE id = ?";
+			String sql = "UPDATE SERVICE_USER SET name=?, tel=?, pw=?, email=?, addr1=?, addr2=?, addr3=? WHERE id = ?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, user.getName());
 			ps.setString(2, user.getTel());
@@ -92,8 +91,10 @@ public class MemberDAO {
 	}//---------------------------
 	private ArrayList<MemberVO> makeList(ResultSet rs) throws SQLException {
 		ArrayList<MemberVO> arr = new ArrayList<>();
+		System.out.println(rs);
 		while(rs.next()) {
 			String id = rs.getString("id");
+			System.out.println("getString id: " + id);
 			String pw = rs.getString("pw");
 			String name = rs.getString("name");
 			String tel = rs.getString("tel");
@@ -102,6 +103,7 @@ public class MemberDAO {
 			String addr2 = rs.getString("addr2");
 			String addr3 = rs.getString("addr3");
 			java.sql.Date indate = rs.getDate("indate");
+			System.out.println(id+","+pw+","+name+","+tel+","+indate.toString()+","+email+","+addr1+","+addr2+","+addr3);
 			MemberVO record = new MemberVO(id,pw,name,tel,indate,email,addr1,addr2,addr3);
 			arr.add(record);
 		}//---while
@@ -115,8 +117,8 @@ public class MemberDAO {
 			ps=con.prepareStatement(sql);
 			ps.setString(1, id);
 			rs=ps.executeQuery();
-			
 			ArrayList<MemberVO> arr=makeList(rs);
+			System.out.println("Arr: "+arr);
 			if(arr!=null && arr.size()==1) {
 				MemberVO user = arr.get(0);
 				return user;

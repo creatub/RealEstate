@@ -107,15 +107,15 @@
 										value=<%=vo.getTel() %>></span>
 										
 				<h4>이메일</h4>
-				<span class="input_area"><input type="email" name="email"></span>
+				<span class="input_area"><input type="email" name="email" value=<%=vo.getEmail() %>></span>
 				
 				<h4>우편번호</h4>
-				<span class="input_area"><input type="text" name="address" class="postcodify_postcode5"></span>
+				<span class="input_area"><input type="text" name="addr1" class="postcodify_postcode5" value=<%=vo.getAddr1() %>></span>
 				<button type="button" id="postcodify_search_button" class="bt">검색</button>
 				<h4>도로명주소</h4>
-				<span class="input_area"><input type="text" name="address" class="postcodify_address"></span>
+				<span class="input_area"><input type="text" name="addr2" class="postcodify_address" value=<%=vo.getAddr2() %>></span>
 				<h4>상세주소</h4>
-				<span class="input_area"><input type="text" name="address" class="postcodify_details"></span>
+				<span class="input_area"><input type="text" name="addr3" class="postcodify_details" value=<%=vo.getAddr3() %>></span>
 
 				<div class="btnArea">
 					<button id="joinBtn" class="bt" style="width : 300px">회원정보수정</button>
@@ -124,6 +124,7 @@
 		</div>
 	</div>
 </div>
+<jsp:include page="/inc/foot.jsp" />
 	<!-- 주소 API 스크립트 -->
 	<!-- jQuery와 Postcodify를 로딩한다 -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -137,7 +138,3 @@
 			return true;
 		}
 	</script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<jsp:include page="/inc/foot.jsp" />

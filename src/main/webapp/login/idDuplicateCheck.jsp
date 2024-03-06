@@ -3,6 +3,7 @@
 
 <%
 	String id = request.getParameter("id");
+	System.out.println("id:!!! "+id);
 	String responseMessage = "";
 	if(id==null||id.trim().isBlank()){
 		responseMessage = "아이디를 입력하세요";
