@@ -100,38 +100,9 @@ String ctx = request.getContextPath();
 <jsp:include page="/inc/foot.jsp" />
     <!-- wrap -->
 
-    <!-- 로그인 팝업 -->
-    <div id="loginPopup" class="popup">
-      <h2>Login</h2>
-      <!-- 로그인 폼 -->
-      <form>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          placeholder="ID"
-          required
-        />
 
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="Password"
-          required
-        />
-        <div class="button-container">
-          <button type="submit">로그인</button>
-          <button onclick="closeLoginPopup()">닫기</button>
-        </div>
-      </form>
-    </div>
 
-    <!-- 배경 오버레이 -->
-    <div id="overlay" class="overlay"></div>
-
-	<script src="<%=ctx%>/js/login.js"></script>
-	<script src="<%=ctx%>/js/map.js"></script>
+<script src="<%=ctx%>/js/map.js"></script>
   </body>
 </html>
 		

@@ -3,8 +3,9 @@
 <%
 //컨텍스트명 구하기 
 String ctx = request.getContextPath();
+String loginId = (String) session.getAttribute("loginId");
 %>
-    
+<jsp:include page="/login/login.jsp" />
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,11 +40,13 @@ String ctx = request.getContextPath();
           />
         </div>
         <div class="head">
-          <img src="<%=ctx%>/resources/profile.png" alt="profile" id="profile" />
+          <a href="<%=ctx%>/login/mypage.jsp"><img src="<%=ctx%>/resources/profile.png" alt="profile" id="profile" /></a>
         </div>
-        <a href="#"
-          ><button id="login" onclick="openLoginPopup()">로그인</button></a
-        >
+        <% if(loginId==null){ %>
+        	<a href="#"><button id="login" onclick="openLoginPopup()">로그인</button></a>
+        <%}else{%>
+        	<a href="<%=ctx%>/login/logout.jsp"><button id="login" style="font-size:11.5px">로그아웃</button></a>
+		<%} %>
       </header>
       <hr class="horizon" color="gray" />
       <a href="<%=ctx%>/index.jsp" class="menu">부동산</a>
@@ -55,3 +58,5 @@ String ctx = request.getContextPath();
       >
 
       <hr class="horizon" color="gray" />
+      
+      <script src="<%=ctx%>/js/login.js"></script>
