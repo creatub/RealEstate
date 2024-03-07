@@ -562,10 +562,10 @@
     new naver.maps.LatLng(37.56833350100327, 126.9566941779143),
     new naver.maps.LatLng(37.59875701675023, 126.95006020161668)
   );
-  $('#to-buying').on('click', function (e) {
+  /*$('#to-buying').on('click', function (e) {
     e.preventDefault();
     map.panToBounds(buying);
-  });
+  });*/
   $('#to-subDivision').on('click', function (e) {
     e.preventDefault();
     map.panToBounds(subDivision);

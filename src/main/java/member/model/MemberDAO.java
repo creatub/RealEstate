@@ -4,11 +4,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
+
+import member.model.MemberVO;
 
 //DAO (Data Access Object) : Database에 접근하여 CRUD로직을 수행하는 객체
 //==> Data Layer (Persistence Layer) ==> Model에 해당
@@ -158,6 +161,7 @@ public class MemberDAO {
 			close();
 		}
 	}
+	
 	
 	public void close() {
 		try {

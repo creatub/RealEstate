@@ -50,7 +50,7 @@ String loginId = (String) session.getAttribute("loginId");
       </header>
       <hr class="horizon" color="gray" />
       <a href="<%=ctx%>/index.jsp" class="menu">부동산</a>
-      <a href="#" id="to-buying" class="menu">매물</a>
+      <a href="<%=ctx%>/properties/list.do" id="to-buying" class="menu">매물</a>
       <a href="#" id="to-subDivision" class="menu">분양</a>
       <a href="#" id="to-auction" class="menu">경매</a>
       <a href="https://apply.lh.or.kr/lhapply/apply/main.do" class="menu"

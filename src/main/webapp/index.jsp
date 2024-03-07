@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
- <%
+<%
 //컨텍스트명 구하기 
 String ctx = request.getContextPath();
 %>
+
 <jsp:include page="/inc/top.jsp" />
       <div class="container">
         <section class="section" id="section-3">

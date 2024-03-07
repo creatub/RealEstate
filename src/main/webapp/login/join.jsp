@@ -117,7 +117,6 @@
 $(document).ready(function() {
     $("#idCheck").click(function() {
         var idValue = $("input[id='idField']").val(); // 아이디 입력란의 값 가져오기
-		alert(idValue);
         $.ajax({
             url: "<%= request.getContextPath() %>/login/idDuplicateCheck.jsp", // 중복 체크 JSP 파일의 경로
             method: "POST", // POST 방식으로 요청
